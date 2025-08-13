@@ -1,0 +1,199 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Site</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Quicksand', sans-serif;
+            background: #0f0c29 url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+            color: white;
+        }
+        .banner {
+            background-image: url('https://imgur.com/hq8CXeT.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 250px;
+            position: relative;
+        }
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid white;
+            position: absolute;
+            bottom: -75px;
+            left: 20px;
+            background-image: url('https://imgur.com/fnc3ixO.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .content {
+            max-width: 800px;
+            margin: 100px auto 50px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.07);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        h2 {
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 5px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li::before {
+            content: "•";
+            color: #ff6ec7;
+            margin-right: 8px;
+        }
+        .toggle-btn {
+        display: block;
+        width: 100%;
+        background: linear-gradient(45deg, #3a8dff, #6ec7ff);
+        color: white;
+        padding: 12px 15px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-bottom: 10px;
+        font-weight: bold;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+        .toggle-content {
+        display: none;
+        margin-bottom: 15px;
+        width: 100%;
+    }
+        .fun-facts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .fact {
+            background: rgba(255,255,255,0.15);
+            padding: 10px 15px;
+            border-radius: 10px;
+            flex: 1 1 calc(50% - 10px);
+            min-width: 150px;
+            text-align: center;
+        }
+        .shuffle-btn {
+            background: #6ec7ff;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="banner">
+        <div class="profile-pic"></div>
+        <div class="profile-name" style="position:absolute; bottom:-40px; left:190px; font-size:24px; font-weight:bold;">Doldie</div>
+    </div>
+
+    <div class="content">
+        <button class="toggle-btn" onclick="toggleSection('likes')">Things I Love</button>
+        <div id="likes" class="toggle-content">
+<ul>
+    <li>Cars that push the limits: Rimac Nevera, Koenigsegg Jesko, Mustang SVT 2004, Corvette C7… just thinking about them makes me grin like a kid.</li>
+    <li>Fighter jets, especially the Mirage 2000-5F—sleek, sharp, gorgeous.</li>
+    <li>Games that test my reflexes and brain: War Thunder, Phantom Forces, Phasmophobia are just intense, strategic and addictive</li>
+    <li>Subtle gothic aesthetics: I love the style: black clothes, eyeliner, fishnets, comfy stuff. Simple, with personality.</li>
+    <li>Anime and stories that dig deep, like Yofukashi no Uta, Berserk, Chainsaw man, Evangelion, Fullmetal Alchemist, Fate, One piece, etc.</li>
+    <li>Loona. Yes, Loona, from Helluva Boss</li>
+    <li>Cheetahs. Fast, graceful, cute. My kind of animal.</li>
+    <li>Quiet nights, soft music, moments to just… exist.</li>
+</ul>
+</div>
+
+        <button class="toggle-btn" onclick="toggleSection('dislikes')">Things I Don’t Like</button>
+        <div id="dislikes" class="toggle-content">
+            <p>I’m not really into people who ignore obvious truths, play the victim, or use manipulation — I just value authenticity and clarity.</p>
+        </div>
+
+        <button class="toggle-btn" onclick="toggleSection('about')">Who I Am</button>
+        <div id="about" class="toggle-content">
+            <p>I’m the type who feels alive when the world slows down. Nighttime, quiet streets, soft lights, moments that let me notice the little things. I love deep talks, subtle energy, and people who get the space between words. I’m not here to impress anyone, just myself. A little tired, a little dreamy, always real. I like intensity, speed, and style, but I also crave calm and nuance.</p>
+        </div>
+
+        <button class="toggle-btn" onclick="toggleSection('obsessions')">Things I Get Obsessed With</button>
+        <div id="obsessions" class="toggle-content">
+            <p>I am obsessed with Loona, speed, horror movies or series, gambling, cars, jets, tanks, games, drawing... cool stuff</p>
+        </div>
+
+        <button class="toggle-btn" onclick="toggleSection('dreams')">Dreams</button>
+        <div id="dreams" class="toggle-content">
+            <p>I want to become a professional pilot and a professional digital artist. Both feel like the same kind of freedom to me</p>
+        </div>
+
+        
+        <button class="toggle-btn" onclick="toggleSection('friends')">Friends</button>
+        <div id="friends" class="toggle-content">
+            <p>My dear friends:</p>
+            <ul>
+                <li>Clear</li>
+                <li>Dragon</li>
+                <li>Drakko</li>
+                <li>Fakezalem</li>
+                <li>Matheusbleck21</li>
+                <li>Nikko</li>
+                <li>Nitidez</li>
+                <li>Skittle</li>
+                <li>Yingloomy</li>
+                <li>Yoserius</li>
+                <li>Zilirian</li>
+            </ul>
+        </div>
+
+        <h2>Fun Facts</h2>
+        <div class="fun-facts" id="funFactsContainer">
+            <div class="fact">I can spend hours perfecting an anime sketch.</div>
+            <div class="fact">Nighttime is my favorite time to be outside.</div>
+            <div class="fact">I’ve memorized specs of my favorite cars.</div>
+            <div class="fact">I love learning random aviation trivia.</div>
+        </div>
+        <button class="shuffle-btn" onclick="shuffleFacts()">Shuffle Facts</button>
+    </div>
+
+    <script>
+        function toggleSection(id) {
+            const section = document.getElementById(id);
+            section.style.display = section.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function shuffleFacts() {
+            const facts = ['I have two cats that chill with me while I game.', 'My favorite anime is Yofukashi no Uta.', 'I can name almost every Mirage 2000 variant.', 'I track crazy car 0-400 km/h times for fun.', 'War Thunder is life', 'I’m obsessed with cars like the Rimac Nevera R and Koenigsegg Jesko.', 'I enjoy drawing characters late at night.', 'I like gothy fashion with eyeliner, black clothes, and thigh-high socks.', 'I can spend hours comparing aircraft designs just for fun.', 'My fav color is Rose red', 'The Challenger 2 British MBT is my fav tank', 'I can spend hours perfecting an anime sketch.', 'Nighttime is my favorite time to be outside.', 'I’ve memorized specs of my favorite cars.', 'I love learning random aviation trivia.', 'I’m obsessed with jet engine sounds.', 'I draw better at 2 AM than during the day.', 'I once played War Thunder for 12 hours straight.', 'I can identify fighter jets just by silhouette.'];
+            const container = document.getElementById('funFactsContainer');
+            container.innerHTML = '';
+            let selected = facts.sort(() => 0.5 - Math.random()).slice(0, 4);
+            selected.forEach(fact => {
+                let div = document.createElement('div');
+                div.className = 'fact';
+                div.textContent = fact;
+                container.appendChild(div);
+            });
+        }
+    </script>
+
+</body>
+</html>
+
+<style>
+.toggle-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.4);
+}
+</style>
