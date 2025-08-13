@@ -23,7 +23,7 @@ body {
             width: 150px;
             height: 150px;
             border-radius: 50%;
-            border: 4px solid white;
+            border: 4px solid #e60054; box-shadow: 0 0 15px rgba(230, 0, 84, 0.6);
             position: absolute;
             bottom: -75px;
             left: 20px;
@@ -55,7 +55,7 @@ body {
         .toggle-btn {
         display: block;
         width: 100%;
-        background: linear-gradient(45deg, #3a8dff, #6ec7ff);
+        background: #e60054;
         color: white;
         padding: 12px 15px;
         border: none;
@@ -89,7 +89,7 @@ body {
             text-align: center;
         }
         .shuffle-btn {
-            background: #6ec7ff;
+            background: #e60054;
             color: white;
             padding: 10px 15px;
             border: none;
@@ -124,7 +124,7 @@ body {
     transition: background 0.2s, transform 0.2s;
 }
 .social-btn:hover, .toggle-btn:hover, .shuffle-btn:hover {
-    filter: brightness(0.9);
+    background: #b80042;
     transform: scale(1.02);
 }
 .social-btn img {
@@ -170,7 +170,7 @@ body {
     transition: background 0.2s, transform 0.2s;
 }
 .social-btn:hover, .toggle-btn:hover, .shuffle-btn:hover {
-    filter: brightness(0.9);
+    background: #b80042;
     transform: scale(1.02);
 }
 .social-btn img {
@@ -193,7 +193,8 @@ body {
 }
 
 .banner {
-    border-bottom: 3px solid #111;
+    border-bottom: 5px solid #e60054;
+    box-shadow: 0 4px 15px rgba(230,0,84,0.4);
 }
 .toggle-content.open {
     opacity: 1;
@@ -206,6 +207,29 @@ body {
 .shuffle-btn.pressed {
   animation: shufflePress 0.12s ease;
 }
+
+@keyframes glowName {
+    0% { text-shadow: 2px 2px 8px rgba(0,0,0,0.8), 0 0 10px rgba(230,0,84,0.8); }
+    50% { text-shadow: 2px 2px 12px rgba(0,0,0,0.9), 0 0 20px rgba(230,0,84,1); }
+    100% { text-shadow: 2px 2px 8px rgba(0,0,0,0.8), 0 0 10px rgba(230,0,84,0.8); }
+}
+
+
+.music-btn {
+    background: linear-gradient(45deg, #e60054, #b80042);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 14px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: filter 0.2s, transform 0.2s;
+}
+.music-btn:hover {
+    filter: brightness(0.9);
+    transform: scale(1.02);
+}
+
 </style>
 </head>
 <body>
@@ -213,9 +237,9 @@ body {
     <div class="banner">
         
 
-<div class="profile-wrapper" style="display:flex; align-items:flex-end; gap:20px; background: rgba(10, 8, 30, 0.92); padding:15px 20px; border-radius:25px; position:absolute; bottom:-80px; left:20px;">
+<div class="profile-wrapper" style="display:flex; align-items:flex-end; gap:20px; background: linear-gradient(135deg, rgba(230, 0, 84, 0.25), rgba(10, 8, 30, 0.95)); padding:18px 22px; border-radius:25px; box-shadow: 0 0 20px rgba(230, 0, 84, 0.4), 0 0 40px rgba(230, 0, 84, 0.2); border: 2px solid rgba(230, 0, 84, 0.8); position:absolute; bottom:-80px; left:20px;">
     <div class="profile-pic" style="position:static;"></div>
-    <div class="profile-name" style="font-size:32px; font-weight:bold; text-shadow: 2px 2px 8px rgba(0,0,0,0.7); color: white; padding-bottom:10px;">Doldie</div>
+    <div class="profile-name" style="font-size:40px; font-weight:bold; background: linear-gradient(90deg, #e60054, #ffffff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 2px 2px 8px rgba(0,0,0,0.8), 0 0 10px rgba(230,0,84,0.8); animation: glowName 2s ease-in-out infinite; padding-bottom:10px;">Doldie</div>
 </div>
 
 
@@ -223,6 +247,9 @@ body {
     </div>
 
     <div class="content">
+        
+<button class="music-btn" onclick="toggleMusic()">🎵</button>
+
         <h2>About Me</h2>
         <button class="toggle-btn" onclick="toggleSection('likes')">Things I Love</button>
         <div id="likes" class="toggle-content">
@@ -348,7 +375,7 @@ body {
 }
 
         function shuffleFacts() {
-            const facts = ['I have two cats that chill with me while I game.', 'My favorite anime is Yofukashi no Uta.', 'I can name almost every Mirage 2000 variant.', 'I track crazy car 0-400 km/h times for fun.', 'War Thunder is life', 'I’m obsessed with cars like the Rimac Nevera R and Koenigsegg Jesko.', 'I enjoy drawing characters late at night.', 'black clothes', 'and thigh-high socks', 'And thigh-high socks.', 'I can spend hours comparing aircraft designs just for fun.', 'My fav color is Rose red', 'The Challenger 2 British MBT is my fav tank', 'I can spend hours perfecting an anime sketch.', 'Nighttime is my favorite time to be outside.', 'I’ve memorized specs of my favorite cars.', 'I love learning random aviation trivia.', 'I’m obsessed with jet engine sounds.', 'I draw better at 2 AM than during the day.', 'I once played War Thunder for 12 hours straight.', 'I can identify fighter jets just by silhouette.', 'My fav song is 911 by Ellise', 'My fav artist is Melanie Martinez', 'My fav food is savory pie', 'Cheetahs are my fav animal', 'I have more than 3000 hours of Sol\'s RNG', 'France is my fav nation', 'Tomboys over femboys', '1+1 = 2', 'Loona? perfection', '🥀', 'Amd > Intel'];
+            const facts = ['I have two cats that chill with me while I game.', 'My favorite anime is Yofukashi no Uta.', 'I can name almost every Mirage 2000 variant.', 'I track crazy car 0-400 km/h times for fun.', 'War Thunder is life', 'I’m obsessed with cars like the Rimac Nevera R and Koenigsegg Jesko.', 'I enjoy drawing characters late at night.', 'I can spend hours comparing aircraft designs just for fun.', 'My fav color is Rose red', 'The Challenger 2 British MBT is my fav tank', 'I can spend hours perfecting an anime sketch.', 'Nighttime is my favorite time to be outside.', 'I’ve memorized specs of my favorite cars.', 'I love learning random aviation trivia.', 'I’m obsessed with jet engine sounds.', 'I draw better at 2 AM than during the day.', 'I once played War Thunder for 12 hours straight.', 'I can identify fighter jets just by silhouette.', 'My fav song is 911 by Ellise', 'My fav artist is Melanie Martinez', 'My fav food is savory pie', 'Cheetahs are my fav animal', 'I have more than 3000 hours of Sol\'s RNG', 'France is my fav nation', 'Tomboys over femboys', '1+1 = 2', 'Loona? perfection', '🥀', 'Amd > Intel', 'Reshiram best pokemon', 'Cats > dogs'];
             const container = document.getElementById('funFactsContainer');
             container.innerHTML = '';
             let selected = facts.sort(() => 0.5 - Math.random()).slice(0, 4);
@@ -360,6 +387,53 @@ body {
             });
         }
     </script>
+
+
+<audio id="bgMusic" loop>
+    <source src="background_music.mp3" type="audio/mpeg">
+</audio>
+<script>
+let music = document.getElementById('bgMusic');
+let isPlaying = false;
+let fadeInterval;
+
+function fadeAudio(targetVolume, duration) {
+    clearInterval(fadeInterval);
+    let startVolume = music.volume;
+    let step = (targetVolume - startVolume) / (duration / 50);
+    fadeInterval = setInterval(() => {
+        let newVolume = music.volume + step;
+        if ((step > 0 && newVolume >= targetVolume) || (step < 0 && newVolume <= targetVolume)) {
+            music.volume = targetVolume;
+            clearInterval(fadeInterval);
+            if (targetVolume === 0) {
+                music.pause();
+            }
+        } else {
+            music.volume = newVolume;
+        }
+    }, 50);
+}
+
+function toggleMusic() {
+    const btn = document.querySelector('.music-btn');
+    if (!isPlaying) {
+        music.volume = 0;
+        music.play();
+        fadeAudio(0.8, 2000); // Fade in para volume alto
+        isPlaying = true;
+        btn.textContent = '⏸️';
+    } else {
+        fadeAudio(0, 2000); // Fade out
+        isPlaying = false;
+        btn.textContent = '🎵';
+    }
+} else {
+        fadeAudio(0, 2000); // Fade out
+        isPlaying = false;
+    }
+}
+</script>
 
 </body>
 </html>
